@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 
 function ProductCard({ product }) {
+  const localImage = `/products/product${product.id}.jpeg`;
+
   return (
     <article className="product-card">
       <Link
@@ -9,7 +11,7 @@ function ProductCard({ product }) {
       >
         <div className="product-image-container">
           <img
-            src={product.image}
+            src={localImage}
             alt={product.title}
             className="product-image"
           />
@@ -26,7 +28,7 @@ function ProductCard({ product }) {
 
           <div className="product-bottom">
             <span className="product-price">
-              ${product.price.toFixed(2)}
+              ${Number(product.price).toFixed(2)}
             </span>
 
             <span className="view-product">

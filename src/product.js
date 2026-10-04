@@ -6,8 +6,7 @@ const fallbackProducts = [
     description:
       "High-quality wireless headphones with comfortable design and clear sound.",
     category: "electronics",
-    image:
-      "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
+    image: "/products/product1.jpeg",
   },
 
   {
@@ -17,8 +16,7 @@ const fallbackProducts = [
     description:
       "A modern smartphone with a stylish design and reliable performance.",
     category: "electronics",
-    image:
-      "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
+    image: "/products/product2.jpeg",
   },
 
   {
@@ -28,8 +26,7 @@ const fallbackProducts = [
     description:
       "Comfortable cotton t-shirt suitable for everyday casual wear.",
     category: "men's clothing",
-    image:
-      "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879_.jpg",
+    image: "/products/product3.jpeg",
   },
 
   {
@@ -39,8 +36,7 @@ const fallbackProducts = [
     description:
       "Stylish casual jacket designed for a comfortable and modern look.",
     category: "women's clothing",
-    image:
-      "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+    image: "/products/product4.jpeg",
   },
 
   {
@@ -50,8 +46,7 @@ const fallbackProducts = [
     description:
       "Elegant bracelet with a simple design suitable for special occasions.",
     category: "jewelery",
-    image:
-      "https://fakestoreapi.com/img/71YAIFU48IL._AC_UY879_.jpg",
+    image: "/products/product5.jpeg",
   },
 
   {
@@ -61,8 +56,7 @@ const fallbackProducts = [
     description:
       "A practical and stylish backpack for everyday travel and work.",
     category: "men's clothing",
-    image:
-      "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
+    image: "/products/product6.jpeg",
   },
 
   {
@@ -72,8 +66,7 @@ const fallbackProducts = [
     description:
       "Beautiful silver bracelet with a clean and elegant appearance.",
     category: "jewelery",
-    image:
-      "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg",
+    image: "/products/product7.jpeg",
   },
 
   {
@@ -83,8 +76,7 @@ const fallbackProducts = [
     description:
       "Comfortable and fashionable top designed for everyday use.",
     category: "women's clothing",
-    image:
-      "https://fakestoreapi.com/img/51Y5NIb1-7L._AC_UX679_.jpg",
+    image: "/products/product8.jpeg",
   },
 ];
 
