@@ -1,7 +1,10 @@
+
 import { useCallback, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Loader from "../components/Loader";
 import fallbackProducts from "../product";
+
+const API_URL = "https://fakestoreapi.noksha.dev/api/products";
 
 function ProductDetail() {
   const { id } = useParams();
@@ -11,34 +14,39 @@ function ProductDetail() {
   const [usingFallback, setUsingFallback] = useState(false);
 
   const fetchProduct = useCallback(async () => {
-    try {
-      setLoading(true);
-      setUsingFallback(false);
+    setLoading(true);
+    setProduct(null);
+    setUsingFallback(false);
 
-      const response = await fetch(
-        `https://fakestoreapi.com/products/${id}`
-      );
+    try {
+      // Use the SAME API as ProductList.jsx
+      const response = await fetch(API_URL);
 
       if (!response.ok) {
-        throw new Error(
-          `Product request failed with status ${response.status}`
-        );
+        throw new Error("Unable to fetch products");
       }
 
       const data = await response.json();
 
-      setProduct(data);
+      if (!Array.isArray(data)) {
+        throw new Error("Invalid product data");
+      }
+
+      // Find the exact product that was clicked
+      const selectedProduct = data.find(
+        (item) => String(item.id) === String(id)
+      );
+
+      setProduct(selectedProduct || null);
     } catch (error) {
-      console.warn(
-        "Fake Store API is unavailable. Using fallback product.",
-        error
+      console.warn("Product API unavailable:", error);
+
+      // Use local products only when the API fails
+      const selectedProduct = fallbackProducts.find(
+        (item) => String(item.id) === String(id)
       );
 
-      const fallbackProduct = fallbackProducts.find(
-        (item) => item.id === Number(id)
-      );
-
-      setProduct(fallbackProduct || null);
+      setProduct(selectedProduct || null);
       setUsingFallback(true);
     } finally {
       setLoading(false);
@@ -62,11 +70,7 @@ function ProductDetail() {
       <main className="product-detail-page">
         <div className="error-container">
           <h2>Product Not Found</h2>
-
-          <p>
-            The product you are looking for does not exist.
-          </p>
-
+          <p>Sorry, this product could not be found.</p>
           <Link to="/" className="back-button">
             ← Back to Products
           </Link>
@@ -83,8 +87,8 @@ function ProductDetail() {
 
       {usingFallback && (
         <div className="fallback-notice">
-          Demo product data is being displayed because the
-          product API is temporarily unavailable.
+          Showing demo product data because the API is
+          temporarily unavailable.
         </div>
       )}
 
@@ -110,7 +114,7 @@ function ProductDetail() {
             ${Number(product.price).toFixed(2)}
           </p>
 
-          <div className="detail-divider"></div>
+          <div className="detail-divider" />
 
           <h2>Description</h2>
 
