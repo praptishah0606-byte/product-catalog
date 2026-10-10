@@ -1,16 +1,37 @@
-# React + Vite
+# Product Catalog
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A responsive Product Catalog web application built using React.js.
 
-Currently, two official plugins are available:
+## Features
+- Display product listings
+- Product information and pricing
+- Responsive user interface
+- Product data integration
+- Easy navigation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Technologies Used
+- React.js
+- JavaScript
+- HTML
+- CSS
+- Vite
 
-## React Compiler
+## Live Demo
+https://product-catalog-eight-mu.vercel.app/
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Installation and Setup
 
-## Expanding the Oxlint configuration
+1. Clone the repository:
+   `git clone https://github.com/praptishah0606-byte/product-catalog.git`
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+2. Open the project folder:
+   `cd product-catalog`
+
+3. Install dependencies:
+   `npm install`
+
+4. Start the development server:
+   `npm run dev`
+
+## Author
+Prapti Shah
